@@ -30,3 +30,15 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+extension HStack {
+    init(
+        alignment: VerticalAlignment = .center,
+        zeroSpacing: CGFloat = 0,
+        @ViewBuilder content: () -> Content
+    ) {
+        self.init(alignment: alignment, spacing: zeroSpacing) {
+            content()
+        }
+    }
+}
